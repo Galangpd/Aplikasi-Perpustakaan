@@ -39,6 +39,10 @@ public class Buku {
             System.out.println("Jenis    : " +jenis[i]);
             System.out.println("Penulis  : " +penulis[i]);
             System.out.println("Penerbit : " +penerbit[i]);
+
+            System.out.println();
         }
+        System.out.println();
+
     }
 }
