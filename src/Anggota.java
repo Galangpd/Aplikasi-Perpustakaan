@@ -1,17 +1,12 @@
-import java.util.Scanner;
-
-public class Anggota {
-    Scanner in = new Scanner(System.in);
-
-    int max=50;
-    int top=0;
-
-    String[] id_anggota = new String[max];
+public class Anggota extends Operasi{
+    public String[] id_anggota = new String[max];
     String[] nama_anggota = new String[max];
     String[] alamat = new String[max];
     String[] no_telp = new String[max];
+    
 
-    public void input_anggota() {
+    @Override
+    public void input() {
         System.out.println("Inputkan Data");
         System.out.print("ID anggota : ");
         id_anggota[top] = in.nextLine();
@@ -29,7 +24,8 @@ public class Anggota {
         System.out.println();
     }
 
-    public void display_anggota(){
+    @Override
+    public void display() {
         System.out.println("\t - Data Anggota -");
         for (int i=0; i<top; i++){
             System.out.println();

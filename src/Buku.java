@@ -1,7 +1,4 @@
-import java.util.Scanner;
-
-public class Buku {
-    Scanner in = new Scanner(System.in);
+public class Buku extends Operasi{
     int max=50;
     int top=0;
     String[] id_buku = new String[max];
@@ -10,18 +7,20 @@ public class Buku {
     String[] penulis = new String[max];
     String[] penerbit = new String[max];
 
-    public void input_buku() {
-            System.out.print("Masukkan ID buku : ");
-            id_buku[top] = in.nextLine();
-            System.out.print("Masukkan judul buku : ");
-            judul[top] = in.nextLine();
-            System.out.print("Masukkan jenis buku : ");
-            jenis[top] = in.nextLine();
-            System.out.print("Masukkan nama penulis : ");
-            penulis[top] = in.nextLine();
-            System.out.print("Masukkan nama penerbit : ");
-            penerbit[top] = in.nextLine();
-            top++;
+
+    @Override
+    public void input() {
+        System.out.print("Masukkan ID buku : ");
+        id_buku[top] = in.nextLine();
+        System.out.print("Masukkan judul buku : ");
+        judul[top] = in.nextLine();
+        System.out.print("Masukkan jenis buku : ");
+        jenis[top] = in.nextLine();
+        System.out.print("Masukkan nama penulis : ");
+        penulis[top] = in.nextLine();
+        System.out.print("Masukkan nama penerbit : ");
+        penerbit[top] = in.nextLine();
+        top++;
 
 
         System.out.println();
@@ -29,7 +28,8 @@ public class Buku {
         System.out.println();
     }
 
-    public void display_buku(){
+    @Override
+    public void display() {
         System.out.println("\t - Daftar Buku -");
         for (int i=0; i<top; i++){
             System.out.println();
@@ -43,6 +43,5 @@ public class Buku {
             System.out.println();
         }
         System.out.println();
-
     }
 }

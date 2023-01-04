@@ -6,6 +6,11 @@ public class Main {
         int pilih;
         String username, password;
 
+        Operasi ops = new Operasi();
+        Buku buk = new Buku();
+        Anggota agt = new Anggota();
+        Peminjaman pinjam = new Peminjaman();
+        Pengembalian kembali = new Pengembalian();
 
         System.out.println("\t\t- Login - ");
         System.out.println("Masukkan-- ");
@@ -14,57 +19,92 @@ public class Main {
         System.out.print("Password : ");
         password = in.nextLine();
 
-        if (username.equals("admin") && password.equals("admin")) {
+        if (ops.login(username,password)) {
             System.out.println();
             System.out.println();
-            System.out.println("\t\t- Program Perpustakaan - ");
-            System.out.println("1. Buku");
-            System.out.println("2. Anggota");
-            System.out.println("3. Peminjaman");
-            System.out.println("4. Pengembalian");
-            System.out.print("  Masukkan pilihan : ");
-            pilih = in.nextInt();
 
+            ops.Menu();
             System.out.println();
-            Buku buk = new Buku();
-            Anggota agt = new Anggota();
-            switch (pilih) {
+
+            switch (ops.pilih) {
                 case 1:
                     do {
+                        System.out.println();
                         System.out.println("\t - Menu Buku - ");
                         System.out.println("1. Input Buku");
                         System.out.println("2. Data Buku");
+                        System.out.println("3. Kembali");
                         System.out.print("  Masukkan pilihan : ");
                         pilih = in.nextInt();
                         if (pilih == 1) {
-                            buk.input_buku();
-                        } else if (pilih == 2) {
-                            buk.display_buku();
+                            buk.input();
                         }
-                    } while (pilih != 3);
+                        else if (pilih == 2) {
+                            buk.display();
+                        }
+                        else if (pilih == 3) {
+                            ops.Menu();
+                        }
+                    } while (pilih != 4);
 
                     break;
 
                 case 2:
                     do {
-                        System.out.println("\t - Data Anggota- ");
+                        System.out.println();
+                        System.out.println("\t - Data Anggota - ");
                         System.out.println("1. Tambah Anggota");
                         System.out.println("2. Tampilkan data anggota");
+                        System.out.println("3. Kembali");
                         System.out.print("  Masukkan pilihan : ");
                         pilih = in.nextInt();
                         if (pilih == 1) {
-                            agt.input_anggota();
+                            agt.input();
                         } else if (pilih == 2) {
-                            agt.display_anggota();
+                            agt.display();
+                        } else if (pilih == 3) {
+                            ops.Menu();
                         }
-                    } while (pilih != 3);
+                    } while (pilih != 4);
 
                     break;
                 case 3:
-                    System.out.println("Ini menu peminjaman");
+                    do {
+                        System.out.println();
+                        System.out.println("\t - Data Peminjaman - ");
+                        System.out.println("1. Tambah Data");
+                        System.out.println("2. Tampilkan Data");
+                        System.out.println("3. Kembali");
+                        System.out.print("  Masukkan pilihan : ");
+                        pilih = in.nextInt();
+                        if (pilih == 1) {
+                            pinjam.input();
+                        } else if (pilih == 2) {
+                            pinjam.display();
+                        } else if (pilih == 3) {
+                            ops.Menu();
+                        }
+                    } while (pilih != 4);
+
                     break;
                 case 4:
-                    System.out.println("Ini menu pengembalian");
+                    do {
+                        System.out.println();
+                        System.out.println("\t - Data Pengembalian - ");
+                        System.out.println("1. Tambah Data");
+                        System.out.println("2. Tampilkan Data");
+                        System.out.println("3. kembali");
+                        System.out.print("  Masukkan pilihan : ");
+                        pilih = in.nextInt();
+                        if (pilih == 1) {
+                            kembali.input();
+                        } else if (pilih == 2) {
+                            kembali.display();
+                        } else if (pilih == 3) {
+                            ops.Menu();
+                        }
+                    } while (pilih != 4);
+
                     break;
             }
         }
