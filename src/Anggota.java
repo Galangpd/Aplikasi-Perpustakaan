@@ -3,7 +3,7 @@ public class Anggota extends Operasi{
     String[] nama_anggota = new String[max];
     String[] alamat = new String[max];
     String[] no_telp = new String[max];
-    
+
 
     @Override
     public void input() {
