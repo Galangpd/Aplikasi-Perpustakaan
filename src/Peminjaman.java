@@ -10,17 +10,7 @@ public class Peminjaman extends Operasi{
     String[] id_buku = new String[max];
     int pilih;
 
-    public void print(){
-        try {
-            PrintWriter out = new PrintWriter(file);
-            out.println("Ini adalah struk");
-            out.close();
-        }
-        catch (FileNotFoundException e){
-            System.out.println("Gagal mencetak struk");
-        }
-    }
-//    PrintWriter
+
     @Override
     public void input() {
         System.out.println(" - Inputkan Data - ");
@@ -32,7 +22,7 @@ public class Peminjaman extends Operasi{
         id_anggota[top] = in.nextLine();
         System.out.print("Masukkan ID Buku : ");
         id_buku[top] = in.nextLine();
-        top++;
+
 
         System.out.println("1. Cetak Struk");
         System.out.println("2. Simpan");
@@ -44,6 +34,22 @@ public class Peminjaman extends Operasi{
         else {
             System.out.println("Data masuk daftar");
             System.out.println();
+        }
+        top++;
+    }
+
+    public void print(){
+        try {
+            PrintWriter out = new PrintWriter(file);
+            out.println(" - Struk Peminjaman -");
+            out.println("ID Peminjaman : " + id_peminjaman[top]);
+            out.println("Tanggal       : " + tgl_peminjaman[top]);
+            out.println("ID Anggota    : " + id_anggota[top]);
+            out.println("ID Buku       : " + id_buku[top]);
+            out.close();
+        }
+        catch (FileNotFoundException e){
+            System.out.println("Gagal mencetak struk");
         }
     }
 

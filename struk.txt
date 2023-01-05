@@ -1,1 +1,5 @@
-Ini adalah struk
+ - Struk Peminjaman -
+ID Peminjaman : 
+Tanggal       : 7 januari 2023
+ID Anggota    : 002
+ID Buku       : 104
